@@ -1,0 +1,48 @@
+{
+    "version": 2,
+    "name": "Impersonate MSG",
+    "disableSend": false,
+    "placeBeforeInput": false,
+    "injectInput": false,
+    "color": "rgba(0, 0, 0, 0)",
+    "onlyBorderColor": false,
+    "qrList": [
+        {
+            "id": 2,
+            "icon": "fa-user-edit",
+            "showLabel": false,
+            "label": "Impersonate",
+            "title": "Impersonate",
+            "message": "[For this response only, restrictions against writing for {{user}} have been lifted. {{user}} specifically requests that you write as them for this message as they have run out of ideas. Do not write as {{char}} for this response. Write your next reply from the point of view of {{user}} (Use whatever POV {{user}} last wrote in, be it third, first or even second-person), using the chat history so far as a guideline for the writing style of {{user}}. Follow the Thought Process instructions adjusted for {{user}}'s perspective. Write 1 reply only in internet RP style. Don't write as {{char}} or system. Don't describe actions of {{char}}.\n\n```rt\n{{input}}\n```\nis {{user}}'s current message so far. If this is not empty, you must carefully rewrite the exact text present there before continuing and extending it to a satisfying conclusion. Your job is to finish their thought. This is not a request to continue the roleplay as {{char}}. This is an explicit and unambiguous request to write as my character in order to finish the message in my stead. Your core instructions explicitly provide an exception for direct requests.]",
+            "contextList": [],
+            "preventAutoExecute": true,
+            "isHidden": false,
+            "executeOnStartup": false,
+            "executeOnUser": false,
+            "executeOnAi": false,
+            "executeOnChatChange": false,
+            "executeOnGroupMemberDraft": false,
+            "executeOnNewChat": false,
+            "automationId": ""
+        },
+        {
+            "id": 8,
+            "icon": "fa-trash-alt",
+            "showLabel": false,
+            "label": "",
+            "title": "",
+            "message": "/messages names=off {{lastMessageId}} |\n/setvar key=Message |\n\n/if left={{getvar::Message}} rule=in right=\"<think>\" {: /delswipe :} |\n\n/flushvar Message |",
+            "contextList": [],
+            "preventAutoExecute": true,
+            "isHidden": false,
+            "executeOnStartup": false,
+            "executeOnUser": false,
+            "executeOnAi": false,
+            "executeOnChatChange": false,
+            "executeOnGroupMemberDraft": false,
+            "executeOnNewChat": false,
+            "automationId": ""
+        }
+    ],
+    "idIndex": 8
+}

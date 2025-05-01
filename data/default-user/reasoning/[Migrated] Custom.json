@@ -1,0 +1,7 @@
+{
+    "prefix": "<think>",
+    "suffix": "</think>",
+    "separator": "\n\n",
+    "name": "[Migrated] Custom",
+    "wait_for_suffix": true
+}

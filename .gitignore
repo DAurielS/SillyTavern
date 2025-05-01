@@ -47,7 +47,27 @@ access.log
 public/css/user.css
 public/error/
 /plugins/
-/data
+/data/_*
+/data/character*
+/data/cookie*
+/data/default-user/back*
+/data/default-user/char*
+/data/default-user/*.zip
+/data/default-user/*.rar
+/data/default-user/stats.json
+/data/default-user/user*
+/data/default-user/thumbnails
+/data/default-user/TextGen*
+/data/default-user/vectors
+/data/default-user/chats
+/data/default-user/characters
+/data/default-user/groups
+/data/default-user/group chats
+/data/default-user/movingUI
+/data/default-user/assets
+/data/default-user/NovelAI Settings
+/data/default-user/KoboldAI Settings
+/data/default-user/instruct
 /default/scaffold
 public/scripts/extensions/third-party
 /certs

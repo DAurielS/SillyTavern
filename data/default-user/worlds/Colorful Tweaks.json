@@ -1,0 +1,177 @@
+{
+    "entries": {
+        "0": {
+            "uid": 0,
+            "key": [
+                "/^(?:[\\s\\S]*?(?:^|[^a-zA-Z-])\\b([a-zA-Z]+-[a-zA-Z]+-[a-zA-Z]+)\\b(?![a-zA-Z-])){3,}[\\s\\S]*$/"
+            ],
+            "keysecondary": [],
+            "comment": "Too many hyphens",
+            "content": "[OOC: Cool it with the triple-hyphenated portmanteau thing. It's excessive. Find a more... subdued way to be colorful]",
+            "constant": false,
+            "vectorized": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "addMemo": true,
+            "order": 100,
+            "position": 4,
+            "disable": false,
+            "excludeRecursion": false,
+            "preventRecursion": false,
+            "delayUntilRecursion": false,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 0,
+            "group": "",
+            "groupOverride": false,
+            "groupWeight": 100,
+            "scanDepth": 6,
+            "caseSensitive": null,
+            "matchWholeWords": null,
+            "useGroupScoring": null,
+            "automationId": "",
+            "role": 1,
+            "sticky": 3,
+            "cooldown": 0,
+            "delay": 0,
+            "displayIndex": 0,
+            "characterFilter": {
+                "isExclude": true,
+                "names": [
+                    "Bot Creator Assistant"
+                ],
+                "tags": []
+            }
+        },
+        "1": {
+            "uid": 1,
+            "key": [
+                "/(?:[\\s\\S]*?\\([^()]*?\\)){2,}/i"
+            ],
+            "keysecondary": [],
+            "comment": "Too many brackets",
+            "content": "[OOC: You're using a lot of explicit parentheses, maybe tone that down a little and try to work your asides into the narration more naturally instead of making it separate?]",
+            "constant": false,
+            "vectorized": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "addMemo": true,
+            "order": 100,
+            "position": 4,
+            "disable": false,
+            "excludeRecursion": false,
+            "preventRecursion": false,
+            "delayUntilRecursion": false,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 0,
+            "group": "",
+            "groupOverride": false,
+            "groupWeight": 100,
+            "scanDepth": 6,
+            "caseSensitive": null,
+            "matchWholeWords": null,
+            "useGroupScoring": null,
+            "automationId": "",
+            "role": 1,
+            "sticky": 3,
+            "cooldown": 0,
+            "delay": 0,
+            "displayIndex": 1,
+            "characterFilter": {
+                "isExclude": true,
+                "names": [
+                    "Bot Creator Assistant"
+                ],
+                "tags": []
+            }
+        },
+        "2": {
+            "uid": 2,
+            "key": [
+                "/^(?:[\\s\\S]*?\\bcarefully constructed\\b){2,}[\\s\\S]*$/i"
+            ],
+            "keysecondary": [],
+            "comment": "Carefully Constructed",
+            "content": "[OOC: You're overusing \"carefully constructed\". Stop that, use a different phrase.]",
+            "constant": false,
+            "vectorized": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "addMemo": true,
+            "order": 100,
+            "position": 4,
+            "disable": false,
+            "excludeRecursion": false,
+            "preventRecursion": false,
+            "delayUntilRecursion": false,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 0,
+            "group": "",
+            "groupOverride": false,
+            "groupWeight": 100,
+            "scanDepth": 6,
+            "caseSensitive": null,
+            "matchWholeWords": null,
+            "useGroupScoring": null,
+            "automationId": "",
+            "role": 1,
+            "sticky": 3,
+            "cooldown": 0,
+            "delay": 0,
+            "displayIndex": 1,
+            "characterFilter": {
+                "isExclude": true,
+                "names": [
+                    "Bot Creator Assistant"
+                ],
+                "tags": []
+            }
+        },
+        "3": {
+            "uid": 3,
+            "key": [
+                "physical blow",
+                "/^(?:[\\s\\S]*?\\b(?:hit(s|ting)? like|hit(s|ting)? (?:him|her|them|{{char}}) like)\\b){2,}[\\s\\S]*$/i"
+            ],
+            "keysecondary": [],
+            "comment": "Hits Like",
+            "content": "[OOC: You're falling into a pattern of having my words always \"hit like a physical blow\" or some metaphorical variation. Stop that, change the way you react/begin replies]",
+            "constant": false,
+            "vectorized": false,
+            "selective": true,
+            "selectiveLogic": 0,
+            "addMemo": true,
+            "order": 100,
+            "position": 4,
+            "disable": false,
+            "excludeRecursion": false,
+            "preventRecursion": false,
+            "delayUntilRecursion": false,
+            "probability": 100,
+            "useProbability": true,
+            "depth": 0,
+            "group": "",
+            "groupOverride": false,
+            "groupWeight": 100,
+            "scanDepth": 6,
+            "caseSensitive": null,
+            "matchWholeWords": null,
+            "useGroupScoring": null,
+            "automationId": "",
+            "role": 1,
+            "sticky": 3,
+            "cooldown": 0,
+            "delay": 0,
+            "displayIndex": 1,
+            "characterFilter": {
+                "isExclude": true,
+                "names": [
+                    "Bot Creator Assistant"
+                ],
+                "tags": []
+            }
+        }
+    }
+}

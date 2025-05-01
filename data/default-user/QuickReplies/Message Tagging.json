@@ -1,0 +1,63 @@
+{
+    "version": 2,
+    "name": "Message Tagging",
+    "disableSend": false,
+    "placeBeforeInput": false,
+    "injectInput": false,
+    "color": "rgba(0, 0, 0, 0)",
+    "onlyBorderColor": false,
+    "qrList": [
+        {
+            "id": 2,
+            "showLabel": false,
+            "label": "Get All Message Names",
+            "title": "",
+            "message": "/message-list 0--1 |\n/setvar key=testList |\n\n/setglobalvar key=NameDict {} |\n\n/foreach {{getvar::testList}} {:\n\t/getat index={{var::index}} {{getvar::testList}} |\n\t/= pipe.name |\n\t/let key=MessageName |\n\t\n\t/setat value={{getglobalvar::NameDict}} index={{var::MessageName}} 0 |\n\t/setglobalvar key=NameDict |\n\t\n:} |\n\n/flushvar testList |",
+            "contextList": [],
+            "preventAutoExecute": true,
+            "isHidden": true,
+            "executeOnStartup": false,
+            "executeOnUser": false,
+            "executeOnAi": false,
+            "executeOnChatChange": true,
+            "executeOnGroupMemberDraft": false,
+            "executeOnNewChat": false,
+            "automationId": ""
+        },
+        {
+            "id": 6,
+            "showLabel": false,
+            "label": "Message Tagging",
+            "title": "",
+            "message": "/message-get -1 |\n/= pipe.name |\n/setvar key=MessageName |\n/setvar key=MessageRaw {{lastMessage}} |\n\n/if left={{getvar::MessageRaw}} right=<think> rule=nin {:\n\t/if left={{getvar::MessageName}} right={{user}} rule=eq else={:\n\t\t/if left={{lastSwipeId}} right=1 rule=eq {:\n\t\t\t/getat index={{getvar::MessageName}} {{getglobalvar::NameDict}} |\n\t\t\t/= {{pipe}} + 1 |\n\t\t\t/setat value={{getglobalvar::NameDict}} index={{getvar::MessageName}} |\n\t\t\t/setglobalvar key=NameDict |\n\t\t:} |\n\t:} \n\t\n\t{:\n\t\t/getat index={{getvar::MessageName}} {{getglobalvar::NameDict}} |\n\t\t/= {{pipe}} + 1 |\n\t\t/setat value={{getglobalvar::NameDict}} index={{getvar::MessageName}} |\n\t\t/setglobalvar key=NameDict |\n\t:} |\n\n\t/getat index={{getvar::MessageName}} {{getglobalvar::NameDict}} |\n\t/setvar key=editID |\n\t\n\t/setvar key=editValue \"{{getvar::MessageName}} Message #{{getvar::editID}}: \" |\n\t\n\t/regex name=\"Message Tags\" {{getvar::MessageRaw}} |\n\t/setvar key=MessageRegex |\n\t/message-edit message={{lastMessageId}} |\n\t\n\t/if left={{lastMessage}} right={{getvar::editValue}} rule=nin {: \n\t\t/message-edit message={{lastMessageId}} {{getvar::editValue}} |\n\t\t/message-edit message={{lastMessageId}} append=true {{getvar::MessageRegex}} |\n\t:} |\n\t\n\t/flushvar MessageRegex |\n\t/flushvar editID |\n\t/flushvar editValue |\n:} |\n\n/flushvar MessageName |\n/flushvar MessageRaw |",
+            "contextList": [],
+            "preventAutoExecute": true,
+            "isHidden": true,
+            "executeOnStartup": false,
+            "executeOnUser": true,
+            "executeOnAi": true,
+            "executeOnChatChange": false,
+            "executeOnGroupMemberDraft": false,
+            "executeOnNewChat": false,
+            "automationId": ""
+        },
+        {
+            "id": 4,
+            "showLabel": false,
+            "label": "Multi Message Tagging",
+            "title": "",
+            "message": "/message-list 0--1 |\n/setvar key=allMessages ||\n\n/message-list {{firstDisplayedMessageId}}--1 |\n/setvar key=messagesList |\n\n/foreach {{getvar::allMessages}} {:\n\t/getat index={{var::index}} {{getvar::allMessages}} |\n\t/= pipe.name |\n\t/setvar key=MessageName |\n\t\n\t/getat index={{getvar::MessageName}} {{getglobalvar::NameDict}} |\n\t/= {{pipe}} + 1 |\n\t/setat value={{getglobalvar::NameDict}} index={{getvar::MessageName}} |\n\t/setglobalvar key=NameDict ||\n\t\n\t/if left={{var::index}} right={{firstDisplayedMessageId}} rule=gte {:\n\t\t/messages names=off hidden=on {{var::index}} |\n\t\t/setvar key=MessageRaw |\n\t\t\n\t\t/getat index={{getvar::MessageName}} {{getglobalvar::NameDict}} |\n\t\t/setvar key=editID |\n\t\n\t\t/setvar key=editValue \"{{getvar::MessageName}} Message #{{getvar::editID}}: \" |\n\t\t\n\t\t/regex name=\"Message Tags\" {{getvar::MessageRaw}} |\n\t\t/setvar key=MessageRegex |\n\t\t/message-edit message={{var::index}} |\n\t\t\n\t\t/if left={{getvar::MessageRaw}} right=<think> rule=nin {:\t\t \n\t\t\t/message-edit message={{var::index}} {{getvar::editValue}} |\n\t\t\t/message-edit message={{var::index}} append=true {{getvar::MessageRegex}} :} |\n\t\t:} |\n\t:} |\n\t\n\t/flushvar MessageName |\n\t/flushvar MessageRaw |\n\t/flushvar MessageRegex |\n\t/flushvar editID |\n\t/flushvar editValue |\n:} ||\n\n/flushvar messagesList |\n/flushvar allMessages |",
+            "contextList": [],
+            "preventAutoExecute": true,
+            "isHidden": true,
+            "executeOnStartup": false,
+            "executeOnUser": false,
+            "executeOnAi": false,
+            "executeOnChatChange": true,
+            "executeOnGroupMemberDraft": false,
+            "executeOnNewChat": false,
+            "automationId": ""
+        }
+    ],
+    "idIndex": 6
+}
